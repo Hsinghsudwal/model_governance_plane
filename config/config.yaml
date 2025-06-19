@@ -1,0 +1,38 @@
+# Model Control Plane Configuration
+mcp:
+  model_metadata:
+    storage_path: "artifacts/metadata"
+    format: "json"
+  
+  deployment:
+    strategies:
+      - direct
+      - canary
+      - blue_green
+    default_strategy: "direct"
+    
+  monitoring:
+    drift_detection:
+      enabled: true
+      threshold: 0.05
+      check_interval_minutes: 60
+    
+    metrics:
+      collection_interval: 300  # 5 minutes
+      retention_days: 7
+
+  retraining:
+    auto_trigger: true
+    performance_threshold: 0.85
+    drift_threshold: 0.1
+
+artifacts:
+  base_path: "artifacts"
+  store_type: "local"  # Can be local, s3, etc.
+
+mlflow:
+  tracking_uri: "http://localhost:5000"
+  experiment_name: "mcp_agent"
+
+evidently:
+  report_path: "reports/drift"
