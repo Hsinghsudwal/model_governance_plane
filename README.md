@@ -1,6 +1,6 @@
 # MCP Agent System
 
-A full-stack ML AI Agent System that provides autonomous model governance, drift detection, and automated model lifecycle management.
+A full-stack ML Agent System that provides autonomous model governance, drift detection, and automated model lifecycle management.
 
 ## Features
 
@@ -20,7 +20,8 @@ A full-stack ML AI Agent System that provides autonomous model governance, drift
 1. Clone the repository:
 ```bash
 git clone <repository-url>
-cd mcp-agent
+cd model_governance_plane
+
 ```
 
 ## install dependencies:
